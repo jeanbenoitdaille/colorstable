@@ -1,0 +1,94 @@
+.test div {
+    box-sizing: border-box;
+    width: 400px;
+    height: 60px;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+  
+  $info: #0059ff;
+  $success: #00b894;
+  $error: #d63031;
+  $white: #ffffff;
+  
+  $colorsMap: (
+    'info': $info,
+    'success': $success,
+    'error': $error
+  );
+  
+  @mixin colorUtilities($property) {
+    @each $name, $value in $colorsMap {
+      &-#{$name} {
+        #{$property}: $value;
+        @if $property == 'border-color' {
+          border-width: 2px;
+          border-style: solid;
+        }
+      }
+    }
+  }
+  
+  .color {
+    @include colorUtilities(color);
+  }
+  
+  .background {
+    @include colorUtilities(background-color);
+  }
+  
+  .border {
+   @include colorUtilities(border-color);
+  }
+
+  .test div {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 400px;
+    height: 60px;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+  
+  .color-info {
+    color: #0059ff;
+  }
+  
+  .color-success {
+    color: #00b894;
+  }
+  
+  .color-error {
+    color: #d63031;
+  }
+  
+  .background-info {
+    background-color: #0059ff;
+  }
+  
+  .background-success {
+    background-color: #00b894;
+  }
+  
+  .background-error {
+    background-color: #d63031;
+  }
+  
+  .border-info {
+    border-color: #0059ff;
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  .border-success {
+    border-color: #00b894;
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  .border-error {
+    border-color: #d63031;
+    border-width: 2px;
+    border-style: solid;
+  }
+  /*# sourceMappingURL=style.css.map */
